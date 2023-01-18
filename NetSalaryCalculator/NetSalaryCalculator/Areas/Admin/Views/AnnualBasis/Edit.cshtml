@@ -1,0 +1,49 @@
+﻿@model AnnualBasis
+
+@{
+	ViewData["Title"] = "Edit -";
+}
+
+<div class="text-center">
+	<h1 class="display-4" style="padding-top: 0.5em;">Edit</h1>
+	<div class="text-box" style="margin:auto; width:60%; text-align:left;padding: 10px 10px 10px 10px">
+		<div style="padding: 10px 10px 10px 10px">
+			<form method="post">
+				<h4 style="font-size: 26px">Fill the basis information.</h4>
+				<hr />
+				<div asp-validation-summary="All" class="text-danger"></div>
+				<div class="form-group font-settings">
+					<label asp-for="Year"></label>
+					<input asp-for="Year" class="form-control" placeholder="Enter year...">
+					<span asp-validation-for="Year" class="small text-danger"></span>
+				</div>
+				<div class="form-group font-settings">
+					<label asp-for="MinimumThreshold">Minimum threshold</label>
+					<input asp-for="MinimumThreshold" class="form-control" placeholder="Enter minimum treshold...">
+					<span asp-validation-for="MinimumThreshold" class="small text-danger"></span>
+				</div>
+				<div class="form-group font-settings">
+					<label asp-for="MaximumThreshold">Maximum threshold</label>
+					<input asp-for="MaximumThreshold" class="form-control" placeholder="Enter maximum treshold...">
+					<span asp-validation-for="MaximumThreshold" class="small text-danger"></span>
+				</div>
+				<div class="form-group font-settings">
+					<label asp-for="TotalIncomePercentage">Total income percentage</label>
+					<input asp-for="TotalIncomePercentage" class="form-control" placeholder="Enter total income percentage...">
+					<span asp-validation-for="TotalIncomePercentage" class="small text-danger"></span>
+				</div>
+				<div class="form-group font-settings">
+					<label asp-for="HealthInsurancePercentage">Health insurance percentage</label>
+					<input asp-for="HealthInsurancePercentage" class="form-control" placeholder="Enter health insurance percentage...">
+					<span asp-validation-for="HealthInsurancePercentage" class="small text-danger"></span>
+				</div>
+				<button type="submit" class="btn-settings font-settings">Edit</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+@section Scripts{
+<partial name="_ValidationScriptsPartial" />
+}

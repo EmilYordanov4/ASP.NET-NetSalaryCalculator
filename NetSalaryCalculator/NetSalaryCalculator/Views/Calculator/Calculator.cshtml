@@ -1,0 +1,57 @@
+﻿@model CalculatorServiceModel
+
+@{
+    ViewData["Title"] = "Calculator -";
+}
+
+<h3 style="text-align:center">Calculate your net salary </h3>
+
+<div class="row" style="margin:30px">
+    <div class="col-lg-6 no-gutters row">
+        <div class="text-box" style="padding: 10px 10px 10px 10px; width: 100%; height: 98%">
+            <div style="padding: 10px 10px 10px 10px">
+                <h5>
+                    <form method="post">
+                        <h4 style="font-size: 26px; text-align:center">Fill the basis information.</h4>
+                        <hr />
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group font-settings">
+                            <label asp-for="GrossSalary">Gross salary</label>
+                            <input asp-for="GrossSalary" class="form-control" placeholder="Enter your gross salary...">
+                            <span asp-validation-for="GrossSalary" class="small text-danger"></span>
+                        </div>
+                        <button asp-area="" asp-controller="Calculator" asp-action="Calculate" asp-route-annualBasisId="@Model.AnnualBasisId" asp-route-userId="@Model.UserId" asp-route-salaryId="@Model.SalaryId" type="submit" class="btn btn-settings btn-dark font-settings ml-3">Calculate</button>
+                    </form>
+                </h5>
+                <div style="margin-top:50px">
+                    <h5>
+                        For @Model.Year the rates are the following:
+                        <ul style="margin-top:20px">
+                            <li style="margin-top:20px">Minimum threshold: @Model.MinimumThreshold lv</li>
+                            <li style="margin-top:20px">Total income percentage: @Model.TotalIncomePercentage %</li>
+                            <li style="margin-top:20px">Health insurance percentage: @Model.HealthInsurancePercentage %</li>
+                            <li style="margin-top:20px">Maximum threshold: @Model.MaximumThreshold lv</li>
+                        </ul>
+                    </h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-6 no-gutters row">
+        <div class="text-box" style="padding: 10px 10px 10px 10px; width: 100%; margin-top:10px">
+            <h4 style="font-size: 26px; text-align:center">Calculations on your latest information</h4>
+            <hr />
+            <div>
+                <h5>
+                    <ul style="margin-top:20px">
+                        <li style="margin-top:20px">Gross salary: @Model.GrossSalary lv</li>
+                        <li style="margin-top:20px">Total income tax: @Model.TotalIncomeTax lv</li>
+                        <li style="margin-top:20px">Health insurance tax: @Model.HealthInsuranceTax lv</li>
+                        <li style="margin-top:20px">Net Salary: @Model.NetSalary lv</li>
+                    </ul>
+                </h5>
+            </div>
+        </div>
+    </div>
+</div>

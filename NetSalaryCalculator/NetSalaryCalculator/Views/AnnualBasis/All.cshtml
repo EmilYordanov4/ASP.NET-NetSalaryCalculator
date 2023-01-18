@@ -1,0 +1,49 @@
+﻿@model IEnumerable<AnnualBasis>
+
+@{
+    ViewData["Title"] = "All -";
+}
+
+<h1 style="text-align:center; margin-bottom:2%">All annual bases</h1>
+
+<div class="form-group float-right">
+    @if (User.IsInRole("Administrator"))
+    {
+        <a class="btn-settings btn btn-dark" asp-area="" asp-controller="AnnualBasis" asp-action="Add">Add annual basis</a>
+    }
+</div>
+<table class="table table-striped text-box">
+
+    <thead class="thead-dark">
+        <tr>
+            <th class="" style=" text-align:center">Year</th>
+            <th class="" style=" text-align:center">Minimum threshold</th>
+            <th class="" style=" text-align:center">Maximum threshold</th>
+            <th class="" style=" text-align:center">Health insurance percentage</th>
+            <th class="" style=" text-align:center">Total income percentage</th>
+            @if (User.IsInRole("Administrator"))
+            {
+                <th class="" style="text-align:center">Action</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var basis in Model)
+        {
+            <tr>
+                <td class="" style="vertical-align:middle; text-align:center">@basis.Year</td>
+                <td class="" style="vertical-align:middle; text-align:center">@basis.MinimumThreshold</td>
+                <td class="" style="vertical-align:middle; text-align:center">@basis.MaximumThreshold</td>
+                <td class="" style="vertical-align:middle; text-align:center">@basis.HealthInsurancePercentage</td>
+                <td class="" style="vertical-align:middle; text-align:center">@basis.TotalIncomePercentage</td>
+                @if (User.IsInRole("Administrator"))
+                {
+                    <td style="vertical-align:middle">
+                        <a asp-area="Admin" asp-controller="AnnualBasis" asp-action="Edit" asp-route-basisId="@basis.Id" class="btn btn-settings btn-dark font-settings float-right ml-3">Edit</a>
+                    <a asp-area="Admin" asp-controller="AnnualBasis" asp-action="Delete" asp-route-basisId="@basis.Id" class="btn btn-danger float-right font-settings ml-3">Delete</a>
+                </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,21 @@
+﻿@inject UserManager<User> UserManager
+@model List<YearServiceModel>
+
+@{
+    ViewData["Title"] = "Year -";
+}
+
+<div style="text-align:center">
+
+    <div class="dropdown">
+        <button onclick="myFunction()" class="btn btn-dark dropbtn " style="background-color: #343a40; border-color: #343a40">
+            Choose year
+        </button>
+        <div id="myDropdown" class="dropdown-content">
+            @foreach (var year in Model)
+            {
+                <a class="nav-link text-dark" asp-area="" asp-controller="Calculator" asp-action="Calculator" asp-route-annualBasisId="@year.Id" asp-route-userId="@UserManager.GetUserId(User)" >@year.Year</a>
+            }
+        </div>
+    </div>
+</div>

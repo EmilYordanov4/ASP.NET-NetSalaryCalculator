@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSalaryCalculator", "NetSalaryCalculator\NetSalaryCalculator.csproj", "{AA312549-91A0-4886-9248-710211D92293}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetSalaryCalculator.Test", "NetSalaryCalculator.Test\NetSalaryCalculator.Test.csproj", "{63CDE082-1C10-47C0-A5D4-DBC066A58724}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA312549-91A0-4886-9248-710211D92293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA312549-91A0-4886-9248-710211D92293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA312549-91A0-4886-9248-710211D92293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA312549-91A0-4886-9248-710211D92293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63CDE082-1C10-47C0-A5D4-DBC066A58724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63CDE082-1C10-47C0-A5D4-DBC066A58724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63CDE082-1C10-47C0-A5D4-DBC066A58724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63CDE082-1C10-47C0-A5D4-DBC066A58724}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51D388CB-1152-4CA5-B484-DE39FA6C2350}
+	EndGlobalSection
+EndGlobal
